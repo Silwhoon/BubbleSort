@@ -20,7 +20,7 @@ public class BubbleSort {
 
         do {
             // Set swappedPositions to false after each pass, if changes were made it will have changed to true
-            // before the next pass. Passes must stop running *only* when no changes were made
+            // before the next pass. Passes must stop running *only* when no swaps were made
             swappedPositions = false;
 
             for (int i = 0; i < (inputArray.length - 1); i++) {
@@ -33,8 +33,7 @@ public class BubbleSort {
                     inputArray[i + 1] = currentInt;
                 }
             }
-        }
-        while (swappedPositions);
+        } while (swappedPositions);
 
         return inputArray;
     }
@@ -44,7 +43,7 @@ public class BubbleSort {
 
         do {
             // Set swappedPositions to false after each pass, if changes were made it will have changed to true
-            // before the next pass. Passes must stop running *only* when no changes were made
+            // before the next pass. Passes must stop running *only* when no swaps were made
             swappedPositions = false;
 
             for (int i = 0; i < (inputArray.length - 1); i++) {
@@ -57,8 +56,7 @@ public class BubbleSort {
                     inputArray[i + 1] = currentInt;
                 }
             }
-        }
-        while (swappedPositions);
+        } while (swappedPositions);
 
         return inputArray;
     }

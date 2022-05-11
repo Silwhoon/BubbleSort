@@ -9,7 +9,6 @@ public class BubbleSortTest {
     public void sortArraySimple() {
         int[] exampleArray = {0, 3, 2, 5, 4, 1};
         int[] expectedResult = {0, 1, 2, 3, 4, 5};
-
         int[] actualResult = BubbleSort.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
@@ -19,7 +18,6 @@ public class BubbleSortTest {
     public void sortArrayWithNegativeNumbers() {
         int[] exampleArray = {-2, 3, 2, -1, 1, 0};
         int[] expectedResult = {-2, -1, 0, 1, 2, 3};
-
         int[] actualResult = BubbleSort.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
@@ -29,7 +27,6 @@ public class BubbleSortTest {
     public void sortArrayWithDuplicateValues() {
         int[] exampleArray = {1, 1, 0, 2, 3, 2};
         int[] expectedResult = {0, 1, 1, 2, 2, 3};
-
         int[] actualResult = BubbleSort.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
@@ -39,7 +36,6 @@ public class BubbleSortTest {
     public void sortArrayWithOneValue() {
         int[] exampleArray = {1};
         int[] expectedResult = {1};
-
         int[] actualResult = BubbleSort.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
@@ -49,7 +45,6 @@ public class BubbleSortTest {
     public void sortArrayWithZeroValues() {
         int[] exampleArray = {};
         int[] expectedResult = {};
-
         int[] actualResult = BubbleSort.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
@@ -59,7 +54,6 @@ public class BubbleSortTest {
     public void sortArraySimpleDescending() {
         int[] exampleArray = {0, 3, 2, 5, 4, 1};
         int[] expectedResult = {5, 4, 3, 2, 1, 0};
-
         int[] actualResult = BubbleSort.sortArray(exampleArray, SortingMethod.DESCENDING);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
@@ -69,7 +63,6 @@ public class BubbleSortTest {
     public void sortArrayWithNegativeNumbersDescending() {
         int[] exampleArray = {-2, 3, 2, -1, 1, 0};
         int[] expectedResult = {3, 2, 1, 0, -1, -2};
-
         int[] actualResult = BubbleSort.sortArray(exampleArray, SortingMethod.DESCENDING);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
@@ -79,7 +72,6 @@ public class BubbleSortTest {
     public void sortArrayWithDuplicateValuesDescending() {
         int[] exampleArray = {1, 1, 0, 2, 3, 2};
         int[] expectedResult = {3, 2, 2, 1, 1, 0};
-
         int[] actualResult = BubbleSort.sortArray(exampleArray, SortingMethod.DESCENDING);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
@@ -89,7 +81,6 @@ public class BubbleSortTest {
     public void sortArrayWithOneValueDescending() {
         int[] exampleArray = {1};
         int[] expectedResult = {1};
-
         int[] actualResult = BubbleSort.sortArray(exampleArray, SortingMethod.DESCENDING);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
@@ -99,7 +90,6 @@ public class BubbleSortTest {
     public void sortArrayWithZeroValuesDescending() {
         int[] exampleArray = {};
         int[] expectedResult = {};
-
         int[] actualResult = BubbleSort.sortArray(exampleArray, SortingMethod.DESCENDING);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
