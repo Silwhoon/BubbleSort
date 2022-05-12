@@ -17,10 +17,21 @@ public class ArraySorterTest {
     }
 
     @Test
+    public void combineAndSortTwoIdenticalArrays() {
+        int[] exampleArrayOne = {1, 3, 5, 7, 9};
+        int[] exampleArrayTwo = {1, 3, 5, 7, 9};
+        int[] expectedResult = {1, 1, 3, 3, 5, 5, 7, 7, 9, 9};
+
+        int[] actualResult = ArraySorter.combineSortedArrays(exampleArrayOne, exampleArrayTwo);
+
+        Assertions.assertArrayEquals(expectedResult, actualResult);
+    }
+
+    @Test
     public void combineAndSortTwoArraysWithDifferingLengthsOne() {
-        int[] exampleArrayOne = {0, 1, 2, 3, 4, 5, 6, 9};
+        int[] exampleArrayOne = {0, 1, 2, 3, 4, 5, 6};
         int[] exampleArrayTwo = {0, 1, 2, 3, 4, 5};
-        int[] expectedResult = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 9};
+        int[] expectedResult = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6};
 
         int[] actualResult = ArraySorter.combineSortedArrays(exampleArrayOne, exampleArrayTwo);
 
@@ -30,8 +41,30 @@ public class ArraySorterTest {
     @Test
     public void combineAndSortTwoArraysWithDifferingLengthsTwo() {
         int[] exampleArrayOne = {0, 1, 2, 3, 4, 5};
+        int[] exampleArrayTwo = {0, 1, 2, 3, 4, 5, 6};
+        int[] expectedResult = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6};
+
+        int[] actualResult = ArraySorter.combineSortedArrays(exampleArrayOne, exampleArrayTwo);
+
+        Assertions.assertArrayEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void combineAndSortTwoArraysWithDifferingLengthsThree() {
+        int[] exampleArrayOne = {0, 1, 2, 3, 4, 5};
         int[] exampleArrayTwo = {0, 1, 2, 3, 4, 5, 6, 9};
         int[] expectedResult = {0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 9};
+
+        int[] actualResult = ArraySorter.combineSortedArrays(exampleArrayOne, exampleArrayTwo);
+
+        Assertions.assertArrayEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void combineAndSortTwoArraysWithOneEmpty() {
+        int[] exampleArrayOne = {0, 1, 2, 3, 4, 5};
+        int[] exampleArrayTwo = {};
+        int[] expectedResult = {0, 1, 2, 3, 4, 5};
 
         int[] actualResult = ArraySorter.combineSortedArrays(exampleArrayOne, exampleArrayTwo);
 
