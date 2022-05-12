@@ -1,6 +1,6 @@
 package com.sparta.sort;
 
-public class ArraySorter {
+public class Sorter {
 
     // Takes 2 SORTED arrays and combines them
     public static int[] combineSortedArrays(int[] arrayOne, int[] arrayTwo) {

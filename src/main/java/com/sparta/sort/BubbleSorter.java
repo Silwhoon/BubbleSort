@@ -1,6 +1,6 @@
 package com.sparta.sort;
 
-public class ArrayBubbleSorter {
+public class BubbleSorter {
 
     // Takes an array of ints, sorts them in ascending order (by default)
     public static int[] sortArray(int[] inputArray) {
