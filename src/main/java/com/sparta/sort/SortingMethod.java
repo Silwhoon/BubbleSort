@@ -1,4 +1,4 @@
-package com.sparta.bubblesort;
+package com.sparta.sort;
 
 public enum SortingMethod {
     ASCENDING,
