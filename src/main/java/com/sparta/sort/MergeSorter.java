@@ -15,7 +15,7 @@ public class MergeSorter {
             return;
         }
 
-        // Instantiate a left and right array using the midpoint to determine size
+        // Instantiate a left and right array using the midpoint to determine the size
         int midPoint = endPoint / 2;
         int[] left = new int[midPoint];
         int[] right = new int[endPoint - midPoint];
@@ -32,11 +32,11 @@ public class MergeSorter {
         mergeSortArray(right, endPoint - midPoint);
 
         // Merge the split arrays back into the original static array
+        // While we still have values in BOTH left and right, compare them and sort
         int leftCounter = 0;
         int rightCounter = 0;
         int retCounter = 0;
 
-        // While we still have values in BOTH left and right, compare them and sort
         while (leftCounter < midPoint && rightCounter < (endPoint - midPoint)) {
             if (left[leftCounter] <= right[rightCounter]) {
                 arrayToSort[retCounter++] = left[leftCounter++];
@@ -45,7 +45,7 @@ public class MergeSorter {
             }
         }
 
-        // After handling all the values either in the left or right array, add the remainder of the last array to the
+        // After handling ALL the values either in the left or right array, add the last of the remaining array to the
         // original static array
         while (leftCounter < midPoint) {
             arrayToSort[retCounter++] = left[leftCounter++];
