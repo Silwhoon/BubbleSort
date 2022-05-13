@@ -22,7 +22,7 @@ public class MergeSorter {
         int[] right = new int[endPoint - midPoint];
 
 
-        // Populate left and right arrays by splitting the original ray into 'left' and 'right' values
+        // Populate left and right arrays by splitting the original array into 'left' and 'right' values
         System.arraycopy(arrayToSort, 0, left, 0, midPoint);
 
         if (endPoint - midPoint >= 0) {
