@@ -4,7 +4,7 @@ public class MergeSorter {
 
     public static int[] sortArray(int[] inputArray) {
         // As we want to sort the entire array the end point is the same as the length
-        mergeSortArray(inputArray, (inputArray.length));
+        mergeSortArray(inputArray, inputArray.length);
         return inputArray;
     }
 
@@ -22,21 +22,18 @@ public class MergeSorter {
 
         // Populate left and right arrays by splitting the original array into 'left' and 'right' values
         System.arraycopy(arrayToSort, 0, left, 0, midPoint);
-
-        if (endPoint - midPoint >= 0) {
-            System.arraycopy(arrayToSort, midPoint, right, 0, endPoint - midPoint);
-        }
+        System.arraycopy(arrayToSort, midPoint, right, 0, endPoint - midPoint);
 
         // Purposefully call this method recursively, with the 2 new halves of the passed array
         mergeSortArray(left, midPoint);
         mergeSortArray(right, endPoint - midPoint);
 
         // Merge the split arrays back into the original static array
-        // While we still have values in BOTH left and right, compare them and sort
         int leftCounter = 0;
         int rightCounter = 0;
         int retCounter = 0;
 
+        // While we still have values in BOTH left and right, compare them and sort
         while (leftCounter < midPoint && rightCounter < (endPoint - midPoint)) {
             if (left[leftCounter] <= right[rightCounter]) {
                 arrayToSort[retCounter++] = left[leftCounter++];
