@@ -26,7 +26,7 @@ public class DisplayManager {
     }
 
     public static void displaySortChoices() {
-        System.out.println("The number of the sorter you wish to use: ");
+        System.out.println("Type the number of the sorter you wish to use: ");
 
         ArrayList<String> menuItems = getMenuItems();
         for (String menuItem : menuItems) {
