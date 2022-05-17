@@ -1,10 +1,17 @@
 package com.sparta.sort.binary;
 
+import com.sparta.sort.Sorter;
+
 import java.util.ArrayList;
 
-public class BinarySorter {
+public class BinarySorter implements Sorter {
 
-    public static int[] sortArray(int[] inputArray, TraversalMethod method) {
+    @Override
+    public int[] sortArray(int[] inputArray) {
+        return sortArray(inputArray, TraversalMethod.INORDER);
+    }
+
+    public int[] sortArray(int[] inputArray, TraversalMethod method) {
         // First check if the array length is 1 or less
         if (inputArray.length <= 1) {
             return inputArray;
@@ -20,14 +27,14 @@ public class BinarySorter {
         };
     }
 
-    private static int[] inorderArray(NodeTree tree) {
+    private int[] inorderArray(NodeTree tree) {
         ArrayList<Integer> ret = new ArrayList<>();
         inorderNode(tree.getRoot(), ret);
 
         return ret.stream().mapToInt(Integer::intValue).toArray();
     }
 
-    private static void inorderNode(Node node, ArrayList<Integer> list) {
+    private void inorderNode(Node node, ArrayList<Integer> list) {
         if (node == null) {
             return;
         }

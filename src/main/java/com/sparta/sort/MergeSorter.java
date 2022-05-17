@@ -1,15 +1,16 @@
 package com.sparta.sort;
 
-public class MergeSorter {
+public class MergeSorter implements Sorter {
 
-    public static int[] sortArray(int[] inputArray) {
+    @Override
+    public int[] sortArray(int[] inputArray) {
         // As we want to sort the entire array the end point is the same as the length
         mergeSortArray(inputArray, inputArray.length);
         return inputArray;
     }
 
     // A recursive function that sorts an input array using the "Merge-Sort" method
-    private static void mergeSortArray(int[] arrayToSort, int endPoint) {
+    private void mergeSortArray(int[] arrayToSort, int endPoint) {
         // If the array is of length 1 or lower, job is already done!
         if (arrayToSort.length <= 1) {
             return;
@@ -28,7 +29,7 @@ public class MergeSorter {
         mergeSortArray(left, midPoint);
         mergeSortArray(right, endPoint - midPoint);
 
-        // Merge the split arrays back into the original static array
+        // Merge the split arrays back into the original array
         int leftCounter = 0;
         int rightCounter = 0;
         int retCounter = 0;
@@ -43,7 +44,7 @@ public class MergeSorter {
         }
 
         // After handling ALL the values either in the left or right array, add the last of the remaining array to the
-        // original static array
+        // original array
         while (leftCounter < midPoint) {
             arrayToSort[retCounter++] = left[leftCounter++];
         }

@@ -1,21 +1,22 @@
 package com.sparta.sort;
 
-public class BubbleSorter {
+public class BubbleSorter implements Sorter {
 
     // Takes an array of ints, sorts them in ascending order (by default)
-    public static int[] sortArray(int[] inputArray) {
+    @Override
+    public int[] sortArray(int[] inputArray) {
         return sortArray(inputArray, SortingMethod.ASCENDING);
     }
 
     // Takes an array of ints, sorts them in the specified order
-    public static int[] sortArray(int[] inputArray, SortingMethod sortingMethod) {
+    public int[] sortArray(int[] inputArray, SortingMethod sortingMethod) {
         return switch (sortingMethod) {
             case ASCENDING -> sortArrayAscending(inputArray);
             case DESCENDING -> sortArrayDescending(inputArray);
         };
     }
 
-    private static int[] sortArrayAscending(int[] inputArray) {
+    private int[] sortArrayAscending(int[] inputArray) {
         boolean swappedPositions;
 
         do {
@@ -38,7 +39,7 @@ public class BubbleSorter {
         return inputArray;
     }
 
-    private static int[] sortArrayDescending(int[] inputArray) {
+    private int[] sortArrayDescending(int[] inputArray) {
         boolean swappedPositions;
 
         do {

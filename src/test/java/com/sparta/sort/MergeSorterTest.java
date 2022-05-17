@@ -5,11 +5,13 @@ import org.junit.jupiter.api.Test;
 
 public class MergeSorterTest {
 
+    MergeSorter mergeSorter = new MergeSorter();
+
     @Test
     public void mergeAndSortArraySimpleEvenAmountOfIndexes() {
         int[] exampleArray = {0, 3, 2, 5, 4, 1};
         int[] expectedResult = {0, 1, 2, 3, 4, 5};
-        int[] actualResult = MergeSorter.sortArray(exampleArray);
+        int[] actualResult = mergeSorter.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
@@ -18,7 +20,7 @@ public class MergeSorterTest {
     public void mergeAndSortArraySimpleOddAmountOfIfIndexes() {
         int[] exampleArray = {0, 3, 2, 5, 4};
         int[] expectedResult = {0, 2, 3, 4, 5};
-        int[] actualResult = MergeSorter.sortArray(exampleArray);
+        int[] actualResult = mergeSorter.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
@@ -27,7 +29,7 @@ public class MergeSorterTest {
     public void mergeAndSortArrayEmpty() {
         int[] exampleArray = {};
         int[] expectedResult = {};
-        int[] actualResult = MergeSorter.sortArray(exampleArray);
+        int[] actualResult = mergeSorter.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
@@ -36,7 +38,7 @@ public class MergeSorterTest {
     public void mergeAndSortArraySingleIndex() {
         int[] exampleArray = {5};
         int[] expectedResult = {5};
-        int[] actualResult = MergeSorter.sortArray(exampleArray);
+        int[] actualResult = mergeSorter.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
@@ -45,7 +47,7 @@ public class MergeSorterTest {
     public void mergeAndSortArrayDoubleIndex() {
         int[] exampleArray = {5, -1};
         int[] expectedResult = {-1, 5};
-        int[] actualResult = MergeSorter.sortArray(exampleArray);
+        int[] actualResult = mergeSorter.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
@@ -54,7 +56,7 @@ public class MergeSorterTest {
     public void mergeAndSortArrayNegative() {
         int[] exampleArray = {0, 3, 2, -1, -2, 1};
         int[] expectedResult = {-2, -1, 0, 1, 2, 3};
-        int[] actualResult = MergeSorter.sortArray(exampleArray);
+        int[] actualResult = mergeSorter.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
@@ -63,7 +65,7 @@ public class MergeSorterTest {
     public void mergeAndSortArrayFewIdenticalIndexes() {
         int[] exampleArray = {0, 3, 2, 2, 1, 1};
         int[] expectedResult = {0, 1, 1, 2, 2, 3};
-        int[] actualResult = MergeSorter.sortArray(exampleArray);
+        int[] actualResult = mergeSorter.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
@@ -72,7 +74,7 @@ public class MergeSorterTest {
     public void mergeAndSortArrayIdenticalIndexes() {
         int[] exampleArray = {1, 1, 1};
         int[] expectedResult = {1, 1, 1};
-        int[] actualResult = MergeSorter.sortArray(exampleArray);
+        int[] actualResult = mergeSorter.sortArray(exampleArray);
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
