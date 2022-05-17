@@ -10,7 +10,6 @@ public class BinarySorter {
             return inputArray;
         }
 
-        // input array: 45, 10, 7, 90, 12, 50, 13, 39, 57
         NodeTree tree = new NodeTree(inputArray);
 
         // Once nodes have been placed within tree, sort them via the stated method and return a new array
