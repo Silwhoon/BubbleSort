@@ -14,7 +14,7 @@ public class SorterLoader {
     public static void start() {
         try {
             DisplayManager.displaySortChoices();
-            Sorter sorter = SorterFactory.getSorter(scanner.nextInt());
+            Sorter sorter = getSorter(scanner.nextInt());
 
             System.out.println("Please enter the size of array you wish to generate: ");
 
@@ -37,6 +37,18 @@ public class SorterLoader {
         }
 
         return unsortedArray;
+    }
+
+    private static Sorter getSorter(int choice) throws SorterLoaderException {
+        SorterFactory sf;
+        switch (choice) {
+            case 1 -> sf = new BubbleSorterFactory();
+            case 2 -> sf = new MergeSorterFactory();
+            case 3 -> sf = new BinarySorterFactory();
+            default -> throw new SorterLoaderException("Invalid sorter choice: " + choice);
+        }
+
+        return sf.getInstance();
     }
 
 }
