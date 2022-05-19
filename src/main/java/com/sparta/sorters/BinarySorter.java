@@ -3,10 +3,14 @@ package com.sparta.sorters;
 import com.sparta.sorters.binarytree.Node;
 import com.sparta.sorters.binarytree.NodeTree;
 import com.sparta.sorters.binarytree.TraversalMethod;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 
 public class BinarySorter implements Sorter {
+
+    private static final Logger logger = LogManager.getLogger(BinarySorter.class.getName());
 
     @Override
     public String toString() {
@@ -15,7 +19,10 @@ public class BinarySorter implements Sorter {
 
     @Override
     public int[] sortArray(int[] inputArray) {
-        return sortArray(inputArray, TraversalMethod.INORDER);
+        logger.info("Started sorting..");
+        int[] ret = sortArray(inputArray, TraversalMethod.INORDER);
+        logger.info("Finished sorting!");
+        return ret;
     }
 
     public int[] sortArray(int[] inputArray, TraversalMethod method) {

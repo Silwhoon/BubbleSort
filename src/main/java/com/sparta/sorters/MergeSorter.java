@@ -1,6 +1,11 @@
 package com.sparta.sorters;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class MergeSorter implements Sorter {
+
+    private static final Logger logger = LogManager.getLogger(MergeSorter.class.getName());
 
     @Override
     public String toString() {
@@ -10,7 +15,9 @@ public class MergeSorter implements Sorter {
     @Override
     public int[] sortArray(int[] inputArray) {
         // As we want to sort the entire array the end point is the same as the length
+        logger.info("Started sorting..");
         mergeSortArray(inputArray, inputArray.length);
+        logger.info("Finished sorting!");
         return inputArray;
     }
 

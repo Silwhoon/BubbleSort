@@ -12,7 +12,7 @@ import java.util.Locale;
 
 public class DisplayManager {
 
-    private static final Logger logger = LogManager.getLogger("DisplayManager");
+    private static final Logger logger = LogManager.getLogger(DisplayManager.class.getName());
 
     private static ArrayList<String> getMenuItems() {
         return new ArrayList<>(Arrays.asList("BubbleSorter", "MergeSorter", "BinarySorter"));

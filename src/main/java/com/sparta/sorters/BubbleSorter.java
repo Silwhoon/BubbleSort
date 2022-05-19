@@ -1,8 +1,12 @@
 package com.sparta.sorters;
 
 import com.sparta.SortingMethod;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class BubbleSorter implements Sorter {
+
+    private static final Logger logger = LogManager.getLogger(BubbleSorter.class.getName());
 
     @Override
     public String toString() {
@@ -12,7 +16,10 @@ public class BubbleSorter implements Sorter {
     // Takes an array of ints, sorts them in ascending order (by default)
     @Override
     public int[] sortArray(int[] inputArray) {
-        return sortArray(inputArray, SortingMethod.ASCENDING);
+        logger.info("Started sorting..");
+        sortArray(inputArray, SortingMethod.ASCENDING);
+        logger.info("Finished sorting!");
+        return inputArray;
     }
 
     // Takes an array of ints, sorts them in the specified order
