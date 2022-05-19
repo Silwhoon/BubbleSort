@@ -20,13 +20,14 @@ public class BubbleSorter implements Sorter {
 
     private int[] sortArrayAscending(int[] inputArray) {
         boolean swappedPositions;
+        int iterations = 0;
 
         do {
             // Set swappedPositions to false after each pass, if changes were made it will have changed to true
             // before the next pass. Passes must stop running *only* when no swaps were made
             swappedPositions = false;
 
-            for (int i = 0; i < (inputArray.length - 1); i++) {
+            for (int i = 0; i < (inputArray.length - 1 - iterations); i++) {
                 int currentInt = inputArray[i];
                 int nextInt = inputArray[i + 1];
 
@@ -36,6 +37,8 @@ public class BubbleSorter implements Sorter {
                     inputArray[i + 1] = currentInt;
                 }
             }
+
+            iterations++;
         } while (swappedPositions);
 
         return inputArray;
