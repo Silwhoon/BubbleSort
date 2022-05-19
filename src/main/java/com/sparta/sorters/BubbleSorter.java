@@ -4,6 +4,11 @@ import com.sparta.SortingMethod;
 
 public class BubbleSorter implements Sorter {
 
+    @Override
+    public String toString() {
+        return "BubbleSorter";
+    }
+
     // Takes an array of ints, sorts them in ascending order (by default)
     @Override
     public int[] sortArray(int[] inputArray) {

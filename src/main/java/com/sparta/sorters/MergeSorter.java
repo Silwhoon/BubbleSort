@@ -3,6 +3,11 @@ package com.sparta.sorters;
 public class MergeSorter implements Sorter {
 
     @Override
+    public String toString() {
+        return "MergeSorter";
+    }
+
+    @Override
     public int[] sortArray(int[] inputArray) {
         // As we want to sort the entire array the end point is the same as the length
         mergeSortArray(inputArray, inputArray.length);

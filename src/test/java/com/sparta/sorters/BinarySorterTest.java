@@ -79,5 +79,11 @@ public class BinarySorterTest {
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void binarySortToString() {
+        String actualResult = binarySorter.toString();
+        Assertions.assertEquals("BinarySorter", actualResult);
+    }
 }
 

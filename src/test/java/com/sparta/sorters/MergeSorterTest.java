@@ -78,4 +78,10 @@ public class MergeSorterTest {
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void mergeSortToString() {
+        String actualResult = mergeSorter.toString();
+        Assertions.assertEquals("MergeSorter", actualResult);
+    }
 }

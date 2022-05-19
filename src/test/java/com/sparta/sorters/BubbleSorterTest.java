@@ -97,4 +97,10 @@ public class BubbleSorterTest {
 
         Assertions.assertArrayEquals(expectedResult, actualResult);
     }
+
+    @Test
+    public void bubbleSortToString() {
+        String actualResult = bubbleSorter.toString();
+        Assertions.assertEquals("BubbleSorter", actualResult);
+    }
 }

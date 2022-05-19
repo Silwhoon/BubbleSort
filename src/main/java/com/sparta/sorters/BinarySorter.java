@@ -9,6 +9,11 @@ import java.util.ArrayList;
 public class BinarySorter implements Sorter {
 
     @Override
+    public String toString() {
+        return "BinarySorter";
+    }
+
+    @Override
     public int[] sortArray(int[] inputArray) {
         return sortArray(inputArray, TraversalMethod.INORDER);
     }
