@@ -12,19 +12,21 @@ public class SorterLoader {
     private final static Scanner scanner = new Scanner(System.in);
 
     public static void start() {
-        try {
-            DisplayManager.displaySortChoices();
-            Sorter sorter = getSorter(scanner.nextInt());
+        while (true) {
+            try {
+                DisplayManager.displaySortChoices();
+                Sorter sorter = getSorter(scanner.nextInt());
 
-            System.out.println("Please enter the size of array you wish to generate: ");
+                System.out.println("Please enter the size of array you wish to generate: ");
 
-            int[] arrayToSort = createArray(scanner.nextInt());
+                int[] arrayToSort = createArray(scanner.nextInt());
 
-            // Print before and start sorting the array that was just created
-            DisplayManager.printBeforeSort(sorter, arrayToSort);
-            DisplayManager.printResults(sorter, arrayToSort);
-        } catch (SorterLoaderException e) {
-            System.out.println(e.getMessage());
+                // Print before and start sorting the array that was just created
+                DisplayManager.printBeforeSort(sorter, arrayToSort);
+                DisplayManager.printResults(sorter, arrayToSort);
+            } catch (SorterLoaderException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
 
