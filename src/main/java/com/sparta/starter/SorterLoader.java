@@ -30,7 +30,7 @@ public class SorterLoader {
         }
     }
 
-    private static int[] createArray(int size) {
+    public static int[] createArray(int size) {
         int[] unsortedArray = new int[size];
         Random random = new Random();
 

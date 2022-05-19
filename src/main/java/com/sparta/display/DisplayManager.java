@@ -13,6 +13,7 @@ import java.util.Locale;
 public class DisplayManager {
 
     private static final Logger logger = LogManager.getLogger(DisplayManager.class.getName());
+    private static final int MAXIMUM_ARRAY_LENGTH_TO_DISPLAY = 30;
 
     private static ArrayList<String> getMenuItems() {
         return new ArrayList<>(Arrays.asList("BubbleSorter", "MergeSorter", "BinarySorter"));
@@ -20,22 +21,32 @@ public class DisplayManager {
 
     public static void printBeforeSort(Sorter sorter, int[] arrayToSort) {
         System.out.println("Sorting using the " + sorter);
-        System.out.println("Before sorting:\n" + Arrays.toString(arrayToSort));
+        System.out.println(getDisplayArrayString("Before sorting:\n", arrayToSort));
+    }
+
+    public static String getDisplayArrayString(String startOfMessage, int[] array) {
+        if (array.length > MAXIMUM_ARRAY_LENGTH_TO_DISPLAY) {
+            return startOfMessage + "Array too long to display.";
+        } else {
+            return startOfMessage + Arrays.toString(array);
+        }
     }
 
     public static void printResults(Sorter sorter, int[] arrayToSort) {
+        // Sort the array and keep track of how long it takes - in nanoseconds
         long start = System.nanoTime();
         int[] sortedArray = sorter.sortArray(arrayToSort);
         long end = System.nanoTime();
 
-        System.out.println("After sorting:\n" + Arrays.toString(sortedArray));
+        // Display the sorted array after performing the sort
+        System.out.println(getDisplayArrayString("After sorting:\n", sortedArray));
 
+        // Convert the time to something a little more readable (no one cares about nanoseconds)
         long timeTakenInNanoSeconds = (end - start);
-
         String formattedTimeTaken = StringFormatter.formatNanosecondsToString(timeTakenInNanoSeconds);
 
         // log the sorting method used, the size of the array and the amount of time
-        logger.info(sorter.toString() + " took " + formattedTimeTaken + " to sort an array of "
+        logger.info(sorter + " took " + formattedTimeTaken + " to sort an array of "
                 + NumberFormat.getNumberInstance(Locale.US).format(arrayToSort.length) + " numbers.");
     }
 
