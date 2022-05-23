@@ -1,6 +1,5 @@
 package com.sparta.sorters;
 
-import com.sparta.SortingMethod;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
