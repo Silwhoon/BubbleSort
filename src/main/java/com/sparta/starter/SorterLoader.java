@@ -4,6 +4,7 @@ import com.sparta.display.DisplayManager;
 import com.sparta.exceptions.SorterLoaderException;
 import com.sparta.sorters.Sorter;
 
+import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,25 +13,28 @@ public class SorterLoader {
     private final static Scanner scanner = new Scanner(System.in);
 
     public static void start() {
-        while (true) {
-            try {
-                DisplayManager.displaySortChoices();
-                Sorter sorter = getSorter(scanner.nextInt());
+        try {
+            DisplayManager.displaySortChoices();
+            Sorter sorter = getSorter(scanner.nextInt());
 
-                System.out.println("Please enter the size of array you wish to generate: ");
+            System.out.println("Please enter the size of array you wish to generate: ");
 
-                int[] arrayToSort = createArray(scanner.nextInt());
+            int[] arrayToSort = createArray(scanner.nextInt());
 
-                // Print before and start sorting the array that was just created
-                DisplayManager.printBeforeSort(sorter, arrayToSort);
-                DisplayManager.printResults(sorter, arrayToSort);
-            } catch (SorterLoaderException e) {
-                System.out.println(e.getMessage());
-            }
+            // Print before and start sorting the array that was just created
+            DisplayManager.printBeforeSort(sorter, arrayToSort);
+            DisplayManager.printResults(sorter, arrayToSort);
+        } catch (SorterLoaderException e) {
+            System.out.println(e.getMessage());
+        } catch (InputMismatchException ime) {
+            System.out.println("Please enter a valid number.");
         }
     }
 
     public static int[] createArray(int size) {
+        // Convert negative numbers to positive
+        if (size < 0) size *= -1;
+
         int[] unsortedArray = new int[size];
         Random random = new Random();
 
