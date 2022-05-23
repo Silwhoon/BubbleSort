@@ -35,6 +35,9 @@ public class SorterLoader {
         // Convert negative numbers to positive
         if (size < 0) size *= -1;
 
+        // Constrain size to be half the max value at most, so that we can create an array
+        size = Math.min(size, Integer.MAX_VALUE / 2);
+
         int[] unsortedArray = new int[size];
         Random random = new Random();
 
@@ -45,7 +48,7 @@ public class SorterLoader {
         return unsortedArray;
     }
 
-    private static Sorter getSorter(int choice) throws SorterLoaderException {
+    public static Sorter getSorter(int choice) throws SorterLoaderException {
         SorterFactory sf;
         switch (choice) {
             case 1 -> sf = new BubbleSorterFactory();
