@@ -21,14 +21,14 @@ public class DisplayManager {
 
     public static void printBeforeSort(Sorter sorter, int[] arrayToSort) {
         System.out.println("Sorting using the " + sorter);
-        System.out.println(getDisplayArrayString("Before sorting:\n", arrayToSort));
+        System.out.println("Before sorting:\n" + getDisplayArrayString(arrayToSort));
     }
 
-    public static String getDisplayArrayString(String startOfMessage, int[] array) {
+    public static String getDisplayArrayString(int[] array) {
         if (array.length > MAXIMUM_ARRAY_LENGTH_TO_DISPLAY) {
-            return startOfMessage + "Array too long to display.";
+            return "Array too long to display.";
         } else {
-            return startOfMessage + Arrays.toString(array);
+            return Arrays.toString(array);
         }
     }
 
@@ -39,7 +39,7 @@ public class DisplayManager {
         long end = System.nanoTime();
 
         // Display the sorted array after performing the sort
-        System.out.println(getDisplayArrayString("After sorting:\n", sortedArray));
+        System.out.println("After sorting:\n" + getDisplayArrayString(sortedArray));
 
         // Convert the time to something a little more readable (no one cares about nanoseconds)
         long timeTakenInNanoSeconds = (end - start);

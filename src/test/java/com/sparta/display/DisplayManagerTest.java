@@ -8,8 +8,8 @@ public class DisplayManagerTest {
     @Test
     public void smallArrayTest() {
         int[] inputArray = new int[4];
-        String expectedResult = "Array: [0, 0, 0, 0]";
-        String actualResult = DisplayManager.getDisplayArrayString("Array: ", inputArray);
+        String expectedResult = "[0, 0, 0, 0]";
+        String actualResult = DisplayManager.getDisplayArrayString(inputArray);
 
         Assertions.assertEquals(expectedResult, actualResult);
     }
@@ -17,8 +17,8 @@ public class DisplayManagerTest {
     @Test
     public void massiveArrayTest() {
         int[] inputArray = new int[1000000000];
-        String expectedResult = "Array: Array too long to display.";
-        String actualResult = DisplayManager.getDisplayArrayString("Array: ", inputArray);
+        String expectedResult = "Array too long to display.";
+        String actualResult = DisplayManager.getDisplayArrayString(inputArray);
 
         Assertions.assertEquals(expectedResult, actualResult);
     }
@@ -26,9 +26,9 @@ public class DisplayManagerTest {
     @Test
     public void sizeOfThirtyArrayTest() {
         int[] inputArray = new int[30];
-        String expectedResult = "Array: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, " +
+        String expectedResult = "[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, " +
                 "0, 0, 0, 0, 0, 0, 0]";
-        String actualResult = DisplayManager.getDisplayArrayString("Array: ", inputArray);
+        String actualResult = DisplayManager.getDisplayArrayString(inputArray);
 
         Assertions.assertEquals(expectedResult, actualResult);
     }
@@ -36,8 +36,8 @@ public class DisplayManagerTest {
     @Test
     public void sizeOfThirtyOneArrayTest() {
         int[] inputArray = new int[31];
-        String expectedResult = "Array: Array too long to display.";
-        String actualResult = DisplayManager.getDisplayArrayString("Array: ", inputArray);
+        String expectedResult = "Array too long to display.";
+        String actualResult = DisplayManager.getDisplayArrayString(inputArray);
 
         Assertions.assertEquals(expectedResult, actualResult);
     }
