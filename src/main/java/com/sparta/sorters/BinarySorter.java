@@ -2,7 +2,6 @@ package com.sparta.sorters;
 
 import com.sparta.sorters.binarytree.Node;
 import com.sparta.sorters.binarytree.NodeTree;
-import com.sparta.sorters.binarytree.TraversalMethod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -20,12 +19,6 @@ public class BinarySorter implements Sorter {
     @Override
     public int[] sortArray(int[] inputArray) {
         logger.info("Started sorting..");
-        int[] ret = sortArray(inputArray, TraversalMethod.INORDER);
-        logger.info("Finished sorting!");
-        return ret;
-    }
-
-    public int[] sortArray(int[] inputArray, TraversalMethod method) {
         // First check if the array length is 1 or less
         if (inputArray.length <= 1) {
             return inputArray;
@@ -33,12 +26,10 @@ public class BinarySorter implements Sorter {
 
         NodeTree tree = new NodeTree(inputArray);
 
-        // Once nodes have been placed within tree, return an array via the stated method
-        return switch (method) {
-            case INORDER -> inorderArray(tree);
-            case PREORDER -> null; //TODO: preorderArray(tree);
-            case POSTORDER -> null; //TODO: postorderArray(tree);
-        };
+        // Once nodes have been placed within tree
+        int[] ret = inorderArray(tree);
+        logger.info("Finished sorting!");
+        return ret;
     }
 
     private int[] inorderArray(NodeTree tree) {
